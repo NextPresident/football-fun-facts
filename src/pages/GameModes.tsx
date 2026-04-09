@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Timer, ListChecks } from "lucide-react";
+import { Brain, Timer, ListChecks, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { type ReactNode } from "react";
 import nehlaBee from "@/assets/nehla-bee.png";
@@ -79,7 +79,12 @@ const GameModes = () => {
   ];
 
   return (
-    <div className="relative flex min-h-svh flex-col items-center bg-honeycomb px-5 pt-16 pb-8">
+    <div className="relative flex min-h-svh flex-col items-center bg-honeycomb px-5 pt-6 pb-8">
+      {/* Back button */}
+      <button onClick={() => navigate("/")} className="self-start mb-4 text-muted-foreground hover:text-foreground transition">
+        <ArrowLeft className="h-5 w-5" />
+      </button>
+
       {/* Decorative */}
       <div className="pointer-events-none absolute top-0 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
 
