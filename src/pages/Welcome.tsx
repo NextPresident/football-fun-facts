@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import nehlaBee from "@/assets/nehla-bee.png";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -17,14 +18,15 @@ const Welcome = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mb-6 flex flex-col items-center"
       >
-        {/* Bee icon */}
-        <motion.div
+        <motion.img
+          src={nehlaBee}
+          alt="Nehla bee mascot"
+          width={140}
+          height={140}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="mb-4 text-7xl"
-        >
-          🐝
-        </motion.div>
+          className="mb-2"
+        />
 
         <h1 className="font-heading text-6xl font-black tracking-tight text-foreground">
           Ne<span className="text-accent">h</span>la
