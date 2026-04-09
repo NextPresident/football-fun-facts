@@ -22,8 +22,8 @@ const Welcome = () => {
         <motion.img
           src={nehlaBee}
           alt="Nehla bee mascot"
-          width={140}
-          height={140}
+          width={200}
+          height={200}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="mb-2"
