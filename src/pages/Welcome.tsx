@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import nehlaBee from "@/assets/nehla-bee.png";
+import ButtonWithIconDemo from "@/components/ui/button-with-icon";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -48,17 +49,13 @@ const Welcome = () => {
       </motion.div>
 
       {/* Play button */}
-      <motion.button
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => navigate("/modes")}
-        className="animate-pulse-honey rounded-2xl bg-accent px-12 py-4 font-heading text-lg font-bold text-accent-foreground transition-colors"
       >
-        Jouer ⚽
-      </motion.button>
+        <ButtonWithIconDemo label="Jouer ⚽" onClick={() => navigate("/modes")} />
+      </motion.div>
 
       {/* Footer */}
       <motion.p
