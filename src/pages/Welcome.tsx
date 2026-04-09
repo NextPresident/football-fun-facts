@@ -30,8 +30,11 @@ const Welcome = () => {
         />
 
         <h1 className="font-heading text-6xl font-black tracking-tight text-white">
-          Ne<span className="text-accent">h</span>la ⚽
+          Ne<span className="relative inline-block text-accent">h<img src={nehlaBee} alt="" className="absolute -top-1 left-1/2 -translate-x-1/2 w-5 h-5 pointer-events-none" style={{ display: 'none' }} /></span>la
         </h1>
+        <div className="mt-1 flex justify-center">
+          <span className="text-4xl">⚽</span>
+        </div>
       </motion.div>
 
       {/* World Cup 2026 badge */}
