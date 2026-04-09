@@ -29,8 +29,8 @@ const Welcome = () => {
           className="mb-2"
         />
 
-        <h1 className="font-heading text-6xl font-black tracking-tight text-white">
-          Ne<span className="text-accent">h</span>la ⚽
+        <h1 className="font-heading text-6xl font-black tracking-tight text-white mb-2">
+          Ne<span className="relative text-accent">h<span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-2xl">⚽</span></span>la
         </h1>
       </motion.div>
 
