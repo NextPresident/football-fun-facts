@@ -117,7 +117,9 @@ const GameModes = () => {
             key={mode.title}
             {...mode}
             delay={0.25 + i * 0.1}
-            onClick={() => {}}
+            onClick={() => {
+              if (mode.title === "Quiz") navigate("/quiz");
+            }}
           />
         ))}
       </div>
