@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Brain, Timer, ListChecks } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { type ReactNode } from "react";
+import nehlaBee from "@/assets/nehla-bee.png";
 
 interface GameModeCardProps {
   icon: ReactNode;
@@ -82,13 +83,15 @@ const GameModes = () => {
       {/* Decorative */}
       <div className="pointer-events-none absolute top-0 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
 
-      <motion.div
+      <motion.img
+        src={nehlaBee}
+        alt="Nehla"
+        width={48}
+        height={48}
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-2 text-3xl"
-      >
-        🐝
-      </motion.div>
+        className="mb-2"
+      />
 
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
