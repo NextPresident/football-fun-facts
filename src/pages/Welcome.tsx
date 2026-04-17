@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import nehlaBee from "@/assets/nehla-bee.png";
-import ButtonWithIconDemo from "@/components/ui/button-with-icon";
+import { User, Users } from "lucide-react";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -44,13 +44,38 @@ const Welcome = () => {
         <span className="text-xs font-semibold text-primary">🏆 World Cup 2026 Edition</span>
       </motion.div>
 
-      {/* Play button */}
+      {/* Mode buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
+        className="flex w-full max-w-sm flex-col gap-3"
       >
-        <ButtonWithIconDemo label="Jouer ⚽" onClick={() => navigate("/modes")} />
+        <button
+          onClick={() => navigate("/modes")}
+          className="group flex items-center gap-4 rounded-2xl border border-accent/30 bg-card/80 backdrop-blur p-4 text-left transition-all hover:border-accent/60 hover:shadow-[var(--shadow-glow-honey)] hover:scale-[1.02]"
+        >
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform group-hover:scale-110">
+            <User className="h-6 w-6" />
+          </div>
+          <div className="min-w-0">
+            <h3 className="font-heading text-base font-bold text-foreground">Solo Play</h3>
+            <p className="mt-0.5 text-xs text-muted-foreground">Joue seul et bats ton record</p>
+          </div>
+        </button>
+
+        <button
+          onClick={() => navigate("/modes")}
+          className="group flex items-center gap-4 rounded-2xl border border-primary/30 bg-card/80 backdrop-blur p-4 text-left transition-all hover:border-primary/60 hover:shadow-[var(--shadow-glow-red)] hover:scale-[1.02]"
+        >
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110">
+            <Users className="h-6 w-6" />
+          </div>
+          <div className="min-w-0">
+            <h3 className="font-heading text-base font-bold text-foreground">Compete with Friends</h3>
+            <p className="mt-0.5 text-xs text-muted-foreground">Défie tes amis en multijoueur</p>
+          </div>
+        </button>
       </motion.div>
 
       {/* Footer */}
