@@ -27,14 +27,13 @@ const Welcome = () => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="flex items-center justify-between"
+        className="flex items-center justify-center"
       >
         <div className="flex items-center gap-2">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
-          <span className="font-display text-[11px] uppercase tracking-[2px] text-primary">Live</span>
-        </div>
-        <div className="font-display text-[11px] uppercase tracking-[2.5px] text-muted-foreground">
-          Saison 2025/26
+          <span className="font-heading text-[11px] uppercase tracking-[2.5px] text-primary">
+            Nehla — Live
+          </span>
         </div>
       </motion.div>
 
@@ -93,7 +92,7 @@ const Welcome = () => {
           transition={{ delay: 0.45, duration: 0.5 }}
           className="mb-12 max-w-[260px] text-center font-body text-sm text-muted-foreground"
         >
-          Le quiz football qui prouve qui est le vrai connaisseur.
+          Tous supporters. Un seul connaisseur.
         </motion.p>
 
         {/* Mode buttons */}
