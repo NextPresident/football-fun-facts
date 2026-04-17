@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,52 +6,55 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
+    /* Deeper, cooler stadium base — more broadcast, less honey */
+    --background: 222 25% 6%;
     --foreground: 40 30% 95%;
 
-    --card: 220 18% 11%;
+    --card: 222 22% 10%;
     --card-foreground: 40 30% 95%;
 
-    --popover: 220 18% 11%;
+    --popover: 222 22% 10%;
     --popover-foreground: 40 30% 95%;
 
+    /* Moroccan red stays as the hero action color */
     --primary: 0 72% 47%;
     --primary-foreground: 40 30% 97%;
 
     --secondary: 152 70% 28%;
     --secondary-foreground: 40 30% 97%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 222 18% 14%;
+    --muted-foreground: 220 10% 60%;
 
+    /* Honey / amber — reserved for premium, score & VIP moments */
     --accent: 38 90% 55%;
-    --accent-foreground: 220 20% 7%;
+    --accent-foreground: 222 25% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
+    --border: 222 18% 18%;
+    --input: 222 18% 18%;
     --ring: 0 72% 47%;
 
     --radius: 1rem;
 
-    --sidebar-background: 220 18% 11%;
+    --sidebar-background: 222 22% 10%;
     --sidebar-foreground: 40 30% 95%;
     --sidebar-primary: 0 72% 47%;
     --sidebar-primary-foreground: 40 30% 97%;
-    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent: 222 18% 14%;
     --sidebar-accent-foreground: 40 30% 95%;
-    --sidebar-border: 220 15% 18%;
+    --sidebar-border: 222 18% 18%;
     --sidebar-ring: 0 72% 47%;
 
-    /* Custom tokens */
+    /* Custom tokens — kept for backward compatibility */
     --honey: 38 90% 55%;
     --morocco-red: 0 72% 47%;
     --morocco-green: 152 70% 28%;
-    --shadow-glow-honey: 0 0 30px hsl(38 90% 55% / 0.2);
-    --shadow-glow-red: 0 0 30px hsl(0 72% 47% / 0.2);
-    --shadow-glow-green: 0 0 30px hsl(152 70% 28% / 0.2);
+    --shadow-glow-honey: 0 0 30px hsl(38 90% 55% / 0.35);
+    --shadow-glow-red: 0 0 30px hsl(0 72% 47% / 0.35);
+    --shadow-glow-green: 0 0 30px hsl(152 70% 28% / 0.35);
   }
 }
 
@@ -69,7 +72,44 @@
   }
 }
 
-/* Honeycomb pattern background */
+/* ------------------------------------------------------------
+   Backgrounds
+   ------------------------------------------------------------ */
+
+/* Original honeycomb — kept so existing screens don't break */
 .bg-honeycomb {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='hsl(220 15%25 15%25)' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+/* New — FIFA broadcast stadium base with subtle diagonal pattern */
+.bg-stadium {
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(ellipse at 50% 0%, hsl(0 72% 47% / 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, hsl(38 90% 55% / 0.05) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 40L40 0M-10 10L10 -10M30 50L50 30' stroke='hsl(222 18%25 14%25)' stroke-width='0.6'/%3E%3C/svg%3E");
+}
+
+/* Horizontal broadcast scan lines */
+.bg-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    hsl(var(--foreground) / 0.4) 0px,
+    hsl(var(--foreground) / 0.4) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ------------------------------------------------------------
+   Animations
+   ------------------------------------------------------------ */
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer {
+  animation: shimmer 3.5s ease-in-out infinite;
 }
