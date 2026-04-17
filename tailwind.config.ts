@@ -14,7 +14,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Outfit", "sans-serif"],
+        // Anton — the jersey-bold italic wordmark font (FIFA broadcast vibe)
+        display: ["Anton", "Oswald", "sans-serif"],
+        // Oswald — secondary display for stadium-style stats/labels
+        heading: ["Oswald", "Outfit", "sans-serif"],
+        // Outfit — smooth sans for card titles, retained for existing screens
+        outfit: ["Outfit", "sans-serif"],
+        // Inter — body UI
         body: ["Inter", "sans-serif"],
       },
       colors: {
