@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw, Home } from "lucide-react";
 import { quizQuestions } from "@/data/quizQuestions";
-import nehlaBee from "@/assets/nehla-bee.png";
+import nehlaBee from "@/assets/mascot/nehla-commentator.png";
 
 const Quiz = () => {
   const navigate = useNavigate();
