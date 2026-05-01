@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Brain, Timer, ListChecks, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { type ReactNode } from "react";
-import nehlaBee from "@/assets/nehla-bee.png";
+import nehlaBee from "@/assets/mascot/nehla-commentator.png";
 
 interface GameModeCardProps {
   icon: ReactNode;
